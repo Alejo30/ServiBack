@@ -13,6 +13,6 @@ public class Turno {
 	private String id;
 	private String fecha;
 	private String hora;
-	private String usuarioId;
+	private String personaId;
 	private String servicioId;
 }

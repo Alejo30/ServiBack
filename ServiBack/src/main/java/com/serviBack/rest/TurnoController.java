@@ -27,9 +27,14 @@ public class TurnoController {
 		return turnoServicio.crearTurno(turno); 
 	}
 	
-	@GetMapping("/{empresaId}")
+	@GetMapping("/{servicioId}")
 	public List<Turno> findTurnos(@PathVariable String servicioId){
 		return turnoServicio.buscarTurnos(servicioId);
+	}
+	
+	@GetMapping("/persona/{personaId}")
+	public List<Turno> findTurnosPersona(@PathVariable String personaId){
+		return turnoServicio.buscarTurnosPersona(personaId);
 	}
 	
 	@PutMapping("/update")

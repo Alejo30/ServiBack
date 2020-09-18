@@ -9,5 +9,7 @@ import com.serviBack.model.Turno;
 public interface ITurnoRepo extends MongoRepository<Turno, String> {
 	
 	List<Turno> findByServicioId(String servicioId);
+	
+	List<Turno> findByPersonaId(String personaId);
 
 }

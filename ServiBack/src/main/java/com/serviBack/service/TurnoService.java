@@ -22,6 +22,10 @@ public class TurnoService {
 		return turnoRepo.findByServicioId(servicioId);
 	}
 	
+	public List<Turno> buscarTurnosPersona(String personaId){
+		return turnoRepo.findByPersonaId(personaId);
+	}
+	
 	public Turno editarTurno(Turno turno) {
 		return turnoRepo.save(turno);
 	}
