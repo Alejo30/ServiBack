@@ -28,8 +28,13 @@ public class ServicioController {
 	}
 	
 	@GetMapping("/{empresaId}")
-	public List<Servicio> buscarServicios(@PathVariable String empresaId){
+	public List<Servicio> findServiciosEmpresa(@PathVariable String empresaId){
 		return service.buscarServicios(empresaId);
+	}
+	
+	@GetMapping("/listAll")
+	public List<Servicio> listServicios(){
+		return service.listaServicios();
 	}
 	
 	@PutMapping("/update")

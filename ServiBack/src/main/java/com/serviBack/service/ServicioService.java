@@ -22,6 +22,10 @@ public class ServicioService {
 		return servicioRepo.findByEmpresaId(empresaId);
 	}
 	
+	public List<Servicio> listaServicios(){
+		return servicioRepo.findAll();
+	}
+	
 	public Servicio editarEmpresa(Servicio servicio) {
 		return servicioRepo.save(servicio);
 	}
