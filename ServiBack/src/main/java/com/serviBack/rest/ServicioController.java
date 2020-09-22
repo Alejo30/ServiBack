@@ -1,6 +1,7 @@
 package com.serviBack.rest;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -29,6 +30,11 @@ public class ServicioController {
 		return service.crearServicio(servicio);
 	}
 	
+	@GetMapping("/findById/{id}")
+	public Optional<Servicio> findId(@PathVariable String id) {
+		return service.buscarId(id);
+	}
+	
 	@GetMapping("/{empresaId}")
 	public List<Servicio> findServiciosEmpresa(@PathVariable String empresaId){
 		return service.buscarServicios(empresaId);
@@ -38,7 +44,6 @@ public class ServicioController {
 	public List<Servicio> listServicios(){
 		return service.listaServicios();
 	}
-	
 	
 	@PutMapping("/update")
 	public Servicio editarServicio(@RequestBody Servicio servicio) {
