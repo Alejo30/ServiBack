@@ -13,6 +13,7 @@ public class Servicio {
 	private String id;
 	private String nombre;
 	private String descripcion;
-	private String empresaId;
+	private String foto;
 	private double precio;
+	private String empresaId;
 }
