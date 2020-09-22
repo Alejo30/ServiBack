@@ -1,6 +1,7 @@
 package com.serviBack.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import com.serviBack.service.PersonaService;
 
 @RestController
 @RequestMapping("/persona")
+@CrossOrigin
 public class PersonaController {
 
 	@Autowired

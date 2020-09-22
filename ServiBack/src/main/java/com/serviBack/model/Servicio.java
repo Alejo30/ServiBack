@@ -14,5 +14,5 @@ public class Servicio {
 	private String nombre;
 	private String descripcion;
 	private String empresaId;
-	private boolean precio;
+	private double precio;
 }
