@@ -27,11 +27,6 @@ public class PersonaController {
 		return personaServicio.crearPersona(persona);
 	}
 	
-	@GetMapping(path = "/login", produces = "application/json")
-	public boolean login(String cedula, String password) {
-		return personaServicio.login(cedula, password);
-	}
-	
 	@PutMapping("/update")
 	public Persona updatePersona(@RequestBody Persona persona) {
 		return personaServicio.editarPersona(persona);

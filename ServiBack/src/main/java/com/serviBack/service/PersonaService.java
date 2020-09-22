@@ -16,14 +16,6 @@ public class PersonaService {
 		return personaRepositorio.insert(persona);
 	}
 	
-	public boolean login(String cedula, String password) {
-		if (personaRepositorio.findByCedulaAndUsuarioPassword(cedula, password) == null) {
-			return false;
-		} else {
-			return true;
-		}
-	}
-	
 	public Persona infoPersona(String cedula) {
 		return personaRepositorio.findByCedula(cedula);
 	}
