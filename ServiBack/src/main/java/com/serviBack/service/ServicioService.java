@@ -19,9 +19,10 @@ public class ServicioService {
 		return servicioRepo.insert(servicio);
 	}
 	
-	public Optional<Servicio> buscarId(String id) {
-		return servicioRepo.findById(id);
+	public Servicio buscarId(String _id) {
+		return servicioRepo.findByServicioId(_id);
 	}
+	
 	public List<Servicio> buscarServicios(String empresaId){
 		return servicioRepo.findByEmpresaId(empresaId);
 	}

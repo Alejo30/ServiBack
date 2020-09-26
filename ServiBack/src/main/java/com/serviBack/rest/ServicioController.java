@@ -31,7 +31,7 @@ public class ServicioController {
 	}
 	
 	@GetMapping("/findById/{id}")
-	public Optional<Servicio> findId(@PathVariable String id) {
+	public Servicio findId(@PathVariable String id) {
 		return service.buscarId(id);
 	}
 	
