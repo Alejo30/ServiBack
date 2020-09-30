@@ -27,7 +27,7 @@ public class TurnoService {
 	}
 	
 	public Turno editarTurno(Turno turno) {
-		return turnoRepo.save(turno);
+		return turnoRepo.save(turno);	
 	}
 	
 	public void eliminarTurno(String id) {

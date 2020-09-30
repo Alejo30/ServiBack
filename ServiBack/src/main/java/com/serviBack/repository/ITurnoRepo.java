@@ -12,6 +12,6 @@ public interface ITurnoRepo extends MongoRepository<Turno, String> {
 	
 	List<Turno> findByPersonaId(String personaId);
 
-	Turno findByFechaAndHora(String fecha, String hora);
+	List<Turno> findByFechaAndHora(String fecha, String hora);
 
 }

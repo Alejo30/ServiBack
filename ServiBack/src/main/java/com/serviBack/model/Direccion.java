@@ -2,7 +2,7 @@ package com.serviBack.model;
 
 import lombok.Data;
 
-@Data
+@Data			
 public class Direccion {
 	private String callePrincipal;
 	private String calleSecundaria;
