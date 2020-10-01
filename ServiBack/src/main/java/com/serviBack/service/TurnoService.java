@@ -34,9 +34,9 @@ public class TurnoService {
 		turnoRepo.deleteById(id);
 	}
 	
-	public boolean turnoDisponible(String fecha, String hora) {
-		turnoRepo.findByFechaAndHora(fecha, hora);
-		if(turnoRepo.findByFechaAndHora(fecha, hora) == null) {
+	public boolean turnoDisponible(String fecha, String hora, String servicioId) {
+		turnoRepo.findByFechaAndHoraAndServicioId(fecha, hora, servicioId);
+		if(turnoRepo.findByFechaAndHoraAndServicioId(fecha, hora, servicioId) == null) {
 			return false;
 		}else {
 			return true;

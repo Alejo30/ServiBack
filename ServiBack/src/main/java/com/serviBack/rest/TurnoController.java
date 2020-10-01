@@ -39,9 +39,9 @@ public class TurnoController {
 		return turnoServicio.buscarTurnosPersona(personaId);
 	}
 	
-	@GetMapping("/Enable/{fecha}/{hora}")
-	public boolean findTurnoDisponible(@PathVariable String fecha, String hora) {
-		return turnoServicio.turnoDisponible(fecha, hora);
+	@GetMapping("/{servicioId}/{fecha}/{hora}")
+	public boolean findTurnoDisponible(@PathVariable String fecha, String hora, String servicioId) {
+		return turnoServicio.turnoDisponible(fecha, hora, servicioId);
 	}
 	
 	@PutMapping("/update")
