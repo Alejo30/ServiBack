@@ -31,7 +31,7 @@ public class EmpresaController {
 	}
 	
 	@GetMapping("/{cedula}")
-	public List<Empresa> findByIdPersona(@PathVariable String cedula){
+	public Empresa findByIdPersona(@PathVariable String cedula){
 		return empresaServicio.buscarEmpresas(cedula);
 	}
 	

@@ -18,7 +18,7 @@ public class EmpresaService {
 		return empresaRepo.insert(empresa);
 	}
 	
-	public List<Empresa> buscarEmpresas(String cedula){
+	public Empresa buscarEmpresas(String cedula){
 		return empresaRepo.findBypersonaId(cedula);
 	}
 	
