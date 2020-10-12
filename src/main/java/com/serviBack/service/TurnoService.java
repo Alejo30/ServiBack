@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.serviBack.model.Servicio;
 import com.serviBack.model.Turno;
 import com.serviBack.repository.ITurnoRepo;
 
@@ -16,6 +17,10 @@ public class TurnoService {
 	
 	public Turno crearTurno(Turno turno){
 		return turnoRepo.insert(turno);
+	}
+	
+	public Turno buscarId(String _id) {
+		return turnoRepo.findByTurnoId(_id);
 	}
 	
 	public List<Turno> buscarTurnos(String servicioId){
