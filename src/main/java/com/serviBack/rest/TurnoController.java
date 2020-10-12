@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.serviBack.model.Servicio;
 import com.serviBack.model.Turno;
 import com.serviBack.service.TurnoService;
 
@@ -27,6 +28,11 @@ public class TurnoController {
 	@PostMapping("/create")
 	public Turno createTurno(@RequestBody Turno turno) {
 		return turnoServicio.crearTurno(turno); 
+	}
+	
+	@GetMapping("/findById/{id}")
+	public Turno findId(@PathVariable String id) {
+		return turnoServicio.buscarId(id);
 	}
 	
 	@GetMapping("/{servicioId}")
