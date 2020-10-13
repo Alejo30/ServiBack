@@ -3,6 +3,8 @@ package com.serviBack.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,14 +47,21 @@ public class TurnoController {
 		return turnoServicio.buscarTurnosPersona(personaId);
 	}
 	
-	@GetMapping("/{servicioId}/{fecha}/{hora}")
-	public boolean findTurnoDisponible(@PathVariable String fecha, String hora, String servicioId) {
-		return turnoServicio.turnoDisponible(fecha, hora, servicioId);
-	}
 	
+	
+	@GetMapping("/{servicioId}/{fecha}/{hora}")
+	public boolean findDisponible(@PathVariable String fecha, String hora, String servicioId) {
+		if (turnoServicio.turnoDisponible(fecha, hora, servicioId)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+		
 	@PutMapping("/update")
 	public Turno updateTurno(@RequestBody Turno turno){
 		return turnoServicio.editarTurno(turno);
+		
 	}
 
 	@DeleteMapping("/{id}")
