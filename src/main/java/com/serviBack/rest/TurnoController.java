@@ -51,11 +51,7 @@ public class TurnoController {
 	
 	@GetMapping("/{servicioId}/{fecha}/{hora}")
 	public boolean findDisponible(@PathVariable String fecha, String hora, String servicioId) {
-		if (turnoServicio.turnoDisponible(fecha, hora, servicioId)) {
-			return true;
-		}else {
-			return false;
-		}
+		return turnoServicio.turnoDisponible(fecha, hora, servicioId);
 	}
 		
 	@PutMapping("/update")

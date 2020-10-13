@@ -40,11 +40,10 @@ public class TurnoService {
 	}
 	
 	public boolean turnoDisponible(String fecha, String hora, String servicioId) {
-		turnoRepo.findByFechaAndHoraAndServicioId(fecha, hora, servicioId);
-		if(turnoRepo.findByFechaAndHoraAndServicioId(fecha, hora, servicioId) == null) {
-			return false;
-		}else {
+		if (turnoRepo.findByFechaAndHoraAndServicioId(fecha, hora, servicioId) != null) {
 			return true;
+		} else {
+			return false;
 		}
 	}
 }
